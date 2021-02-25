@@ -9,6 +9,6 @@ async def on_ready():
 
 
 
-bot.run('NTQ0MTY4MzYzMDI3NTk1Mjk0.XGA6Rw.RC1pQBQNXwAx3yukwoycmcA3lEI')
+bot.run('NTQ0MTY4MzYzMDI3NTk1Mjk0.XGA6Rw.TPnMWcfGyup2BNIdohZB8xsg9Qw')
 
 
