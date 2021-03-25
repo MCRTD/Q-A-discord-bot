@@ -4,16 +4,16 @@ import googletrans
 from googletrans import Translator
 
 
-def translate_text(originlang, targetlang, input):
+def translate_text(originlang, targetlang, txt):
     t = googletrans.Translator()
     if originlang is None:
         result = t.translate(
-            input,
-            dest=targetlang
+            txt,
+            des=targetlang
         )
     else:
         result = t.translate(
-            input,
+            txt,
             dest=originlang
         )
 
@@ -49,8 +49,8 @@ async def translate(ctx, lang, *, args):
     embed = discord.Embed(
         title=result.text,
         description=result.src
-                    + ' -> '
-                    + result.dest,
+        + ' -> '
+        + result.dest,
         color=0x00ff00
     )
 
