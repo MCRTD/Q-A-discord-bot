@@ -1,7 +1,6 @@
 import discord
-from discord.ext import commands
 import googletrans
-from googletrans import Translator
+from discord.ext import commands
 
 
 def translate_text(originlang, targetlang, txt):
@@ -49,8 +48,8 @@ async def translate(ctx, lang, *, args):
     embed = discord.Embed(
         title=result.text,
         description=result.src
-        + ' -> '
-        + result.dest,
+            + ' -> '
+            + result.dest,
         color=0x00ff00
     )
 
