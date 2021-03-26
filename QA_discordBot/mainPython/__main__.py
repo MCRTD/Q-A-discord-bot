@@ -1,33 +1,6 @@
 import discord
-import googletrans
+import TranslateText
 from discord.ext import commands
-
-
-def translate_text(originlang, targetlang, txt):
-    t = googletrans.Translator()
-    if originlang is None:
-        result = t.translate(
-            txt,
-            des=targetlang
-        )
-    else:
-        result = t.translate(
-            txt,
-            dest=originlang
-        )
-
-    print('目標語言 -> '
-          + str(targetlang)
-          )
-
-    print('句子 -> '
-          + str(input)
-          + ' >>> '
-          + str(result.text)
-          )
-
-    return result
-
 
 bot = commands.Bot(command_prefix='r?')
 
@@ -43,13 +16,13 @@ async def translate(ctx, lang, *, args):
           + str(ctx)
           )
 
-    result = translate_text(None, lang, args)
+    result = TranslateText.translate_text(None, lang, args)
 
     embed = discord.Embed(
         title=result.text,
         description=result.src
-            + ' -> '
-            + result.dest,
+                    + ' -> '
+                    + result.dest,
         color=0x00ff00
     )
 
