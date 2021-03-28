@@ -34,4 +34,20 @@ async def translate(ctx, lang, *, args):
     await ctx.send(embed=embed)
 
 
+@bot.command()
+async def ping(ctx):
+    print('呼叫延遲檢測 -> ' + str(bot.latency))
+    embed = discord.Embed(
+        title="連線延遲 ping",
+        description=str(bot.latency),
+        color=0x00ff00
+    )
+
+    embed.set_author(
+        name=ctx.message.author.name,
+        icon_url=ctx.message.author.avatar_url
+    )
+
+    await ctx.send(embed=embed)
+
 bot.run("token")
