@@ -1,6 +1,11 @@
+import os
 import discord
+import json
 import TranslateText
 from discord.ext import commands
+
+with open(os.path.abspath(os.path.dirname(os.getcwd()))+'/resources/Setting.json', mode='r',encoding='utf8') as Setting_Json:
+    Setting_Json_data = json.load(Setting_Json)
 
 bot = commands.Bot(command_prefix='r?')
 
@@ -50,4 +55,4 @@ async def ping(ctx):
 
     await ctx.send(embed=embed)
 
-bot.run("token")
+bot.run(Setting_Json_data['token'])
