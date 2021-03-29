@@ -13,7 +13,7 @@ pybot = commands.Bot(command_prefix='r?')
 async def on_ready():
     print("debug code 0")
 
-for filename in os.listdir(os.getcwd() + '\Commands'):
+for filename in os.listdir(os.getcwd() + '/Commands'):
     print('Commands.'+filename[:-3])
     if not filename.endswith('.py'):
         continue
